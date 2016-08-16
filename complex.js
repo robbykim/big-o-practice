@@ -1,5 +1,7 @@
 // Finds the nth element in an array
 var findNthElement = function( array, n, i ) { // O(log(n))
+  console.log( n, '____N' );
+
   i = i || 0;
   //console.log( i, '___inner' );
   if ( array.length == 1 ) { // happens once O(1)
@@ -7,6 +9,7 @@ var findNthElement = function( array, n, i ) { // O(log(n))
   }
 
   var middle = Math.floor( array.length / 2 ); // declaration happens once O(1)
+  console.log( middle, '______middle' );
   if ( n < middle ) { // happens once O(1)
     // console.log(i);
     return findNthElement( array.slice( 0, middle ), n, i + 1 ); // loop O(log(n))
@@ -16,7 +19,7 @@ var findNthElement = function( array, n, i ) { // O(log(n))
   }
 };
 
-// console.log(findNthElement([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20], 19));
+console.log( findNthElement( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ], 2 ) );
 
 
 // var demo = function( array ) {
