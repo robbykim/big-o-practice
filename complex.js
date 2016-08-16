@@ -101,10 +101,23 @@ var doubleArray = function( array, count ) { // O(n)
 // console.log(doubleArray([0,1,2,3,4,5,6,7,8,9]));
 
 // Calculates the nth triangle number
-// This one's a challenge! :)
+// This one's a challenge! :) somewhere btn 2^n and !n
+
+var c1 = 0;
 var triangleNumbers = function( n ) {
+  c1++;
   if ( n == 0 || n == 1 ) {
     return n;
   }
-  return triangleNumbers( n - 1 ) + triangleNumbers( n - 1 ) - triangleNumbers( n - 2 ) + 1;
+  return 2 * triangleNumbers( n - 1 ) - triangleNumbers( n - 2 ) + 1;
 };
+
+var factorial = function(n) {
+  if (n === 1) return n;
+  return factorial(n-1)*n;};
+
+for (var i = 1; i < 40; i++) {
+  c1 = 0;
+  var result = triangleNumbers(i);
+  console.log(i, c1);
+}
